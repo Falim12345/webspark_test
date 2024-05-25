@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:webspark_test/presentation/pages/result_screen.dart';
 
 import '../../core/app_text_controllers.dart';
 import '../../data/model/path_model.dart';
@@ -80,6 +81,15 @@ class ApiUrlInputScreenState extends State<ApiUrlInputScreen> {
                 ElevatedButton(
                   onPressed: () async {
                     Navigator.pop(context);
+                    unawaited(
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ResultListScreen(pathsData: pathsData),
+                        ),
+                      ),
+                    );
                   },
                   child: const Text(InputUrlController.sendResults),
                 ),
