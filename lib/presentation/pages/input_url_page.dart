@@ -159,10 +159,8 @@ class ApiUrlInputScreenState extends State<ApiUrlInputScreen> {
   Future<void> _showBottomSheet() async {
     _showLoadingIndicator();
 
-    // Execute the main logic to fetch and process data
     final pathsData = await _fetchDataAndProcess();
 
-    // Close the loading indicator and show the result prompt
     if (mounted) {
       Navigator.pop(context);
       _showResultPrompt(pathsData);
